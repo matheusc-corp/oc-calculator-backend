@@ -1,0 +1,6 @@
+@oc_calculator_backend_HostAddress = http://localhost:5012
+
+GET {{oc_calculator_backend_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
