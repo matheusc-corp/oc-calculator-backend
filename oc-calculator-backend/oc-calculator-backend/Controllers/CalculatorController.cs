@@ -8,23 +8,23 @@ namespace oc_calculator_backend.Controllers
     public class CalculatorController : ControllerBase
     {
         [HttpPost("calculate")]
-        public IActionResult Calculate(int a, int b, string operation)
+        public IActionResult Calculate(int firstValue, int secondValue, string operation)
         {
             var result = 0;
 
             switch (operation)
             {
                 case "+":
-                    result = Sum(a, b);
+                    result = Sum(firstValue, secondValue);
                     break;
                 case "-":
-                    result = Subtract(a, b);
+                    result = Subtract(firstValue, secondValue);
                     break;
                 case "*":
-                    result = Multiply(a, b);
+                    result = Multiply(firstValue, secondValue);
                     break;
                 case "/":
-                    result = Divide(a, b);
+                    result = Divide(firstValue, secondValue);
                     break;
                 default:
                     //throw new NotImplementedException();
@@ -34,24 +34,24 @@ namespace oc_calculator_backend.Controllers
             return Ok(result);
         }
 
-        private int Sum(int a, int b)
+        private int Sum(int valueA, int  valueB)
         {
-            return a + b;
+            return valueA +  valueB;
         }
 
-        private int Subtract(int a, int b)
+        private int Subtract(int valueA, int  valueB)
         {
-            return a - b;
+            return valueA -  valueB;
         }
 
-        private int Multiply(int a, int b)
+        private int Multiply(int valueA, int  valueB)
         {
-            return a * b;
+            return valueA *  valueB;
         }
 
-        private int Divide(int a, int b)
+        private int Divide(int valueA, int  valueB)
         {
-            return a / b;
+            return valueA /  valueB;
         }
     }
 }
