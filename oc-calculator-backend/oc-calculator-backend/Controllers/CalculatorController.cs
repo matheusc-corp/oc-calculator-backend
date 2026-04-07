@@ -8,7 +8,7 @@ namespace oc_calculator_backend.Controllers
     public class CalculatorController : ControllerBase
     {
         [HttpPost("calculate")]
-        public IActionResult Calculate(int firstValue, int secondValue, string operation)
+        public IActionResult Calculate(int firstValue, string operation, int secondValue)
         {
             var result = 0;
 
@@ -29,7 +29,7 @@ namespace oc_calculator_backend.Controllers
                 default:
                     //throw new NotImplementedException();
                     return BadRequest("Invalid operation");
-            }
+            }                      
 
             return Ok(result);
         }
